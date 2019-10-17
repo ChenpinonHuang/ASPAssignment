@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using ASPAssignment.Models;
 
 namespace ASPAssignment.Data
 {
@@ -12,5 +13,7 @@ namespace ASPAssignment.Data
             : base(options)
         {
         }
+        public DbSet<ASPAssignment.Models.TerrestrialAnimal> TerrestrialAnimal { get; set; }
+        public DbSet<ASPAssignment.Models.Animal> Animal { get; set; }
     }
 }
