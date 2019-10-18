@@ -5,16 +5,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using ASPAssignment.Data;
 using ASPAssignment.Models;
 
 namespace ASPAssignment.Controllers
 {
     public class CustomersController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly ASPAssignmentContext _context;
 
-        public CustomersController(ApplicationDbContext context)
+        public CustomersController(ASPAssignmentContext context)
         {
             _context = context;
         }
@@ -54,7 +53,7 @@ namespace ASPAssignment.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CustomerId,FirstName,LastName,Address,OrderId")] Customer customer)
+        public async Task<IActionResult> Create([Bind("CustomerId,FirstName,LastName,Address")] Customer customer)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +85,7 @@ namespace ASPAssignment.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CustomerId,FirstName,LastName,Address,OrderId")] Customer customer)
+        public async Task<IActionResult> Edit(int id, [Bind("CustomerId,FirstName,LastName,Address")] Customer customer)
         {
             if (id != customer.CustomerId)
             {

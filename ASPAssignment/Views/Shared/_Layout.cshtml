@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - ASPAssignment</title>
+    <title>@ViewData["Title"] - Yummmmy Restaurant</title>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -26,15 +26,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">ASPAssignment</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Yummmmy Restaurant</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action=""></a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action=""></a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    @*add two lable to the navigation*@
+                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home Page</a></li>
+                    <li><a asp-area="" asp-controller="Customers" asp-action="Index">Customer Info</a></li>
+                    <li><a asp-area="" asp-controller="Orders" asp-action="Index">Order details</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="About">About us</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact me!</a></li>
 
                 </ul>
                 <partial name="_LoginPartial" />
@@ -48,7 +49,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2019 - ASPAssignment</p>
+            <p>&copy; 2019 - ASPAssignment. Studentname: Chengbin Huang 200405662 Course: Server-Side Scripting-ASP.NET COMP2084-19F-11272</p>
         </footer>
     </div>
 

@@ -16,9 +16,7 @@ namespace ASPAssignment.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Address { get; set; }
-        //set the foreign key
-        [ForeignKey("OrderId ")]
-        public string OrderId { get; set; }
+
         //set one to many relationship
         public ICollection<Order> Orders { get; set; }
     }
