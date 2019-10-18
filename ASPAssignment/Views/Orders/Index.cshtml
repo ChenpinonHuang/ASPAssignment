@@ -41,7 +41,9 @@
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Customers.CustomerId)
+                @* Concatenate tow column in Customer table and show the result in view order  *@
+                @Html.DisplayFor(modelItem => item.Customers.FirstName) &nbsp;
+                @Html.DisplayFor(modelItem => item.Customers.LastName)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.OrderId">Edit</a> |
