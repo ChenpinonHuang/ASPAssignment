@@ -10,23 +10,22 @@ using ASPAssignment.Models;
 
 namespace ASPAssignment.Controllers
 {
-    public class TerrestrialAnimalsController : Controller
+    public class OrdersController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public TerrestrialAnimalsController(ApplicationDbContext context)
+        public OrdersController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: TerrestrialAnimals
+        // GET: Orders
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.TerrestrialAnimal.Include(t => t.Animal);
-            return View(await applicationDbContext.ToListAsync());
+            return View(await _context.Order.ToListAsync());
         }
 
-        // GET: TerrestrialAnimals/Details/5
+        // GET: Orders/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -34,42 +33,39 @@ namespace ASPAssignment.Controllers
                 return NotFound();
             }
 
-            var terrestrialAnimal = await _context.TerrestrialAnimal
-                .Include(t => t.Animal)
-                .FirstOrDefaultAsync(m => m.TerrestrialId == id);
-            if (terrestrialAnimal == null)
+            var order = await _context.Order
+                .FirstOrDefaultAsync(m => m.OrderId == id);
+            if (order == null)
             {
                 return NotFound();
             }
 
-            return View(terrestrialAnimal);
+            return View(order);
         }
 
-        // GET: TerrestrialAnimals/Create
+        // GET: Orders/Create
         public IActionResult Create()
         {
-            ViewData["AnimalId"] = new SelectList(_context.Set<Animal>(), "AnimalId", "AnimalId");
             return View();
         }
 
-        // POST: TerrestrialAnimals/Create
+        // POST: Orders/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("TerrestrialId,AnimalId,Category,Weight,LifeSpan")] TerrestrialAnimal terrestrialAnimal)
+        public async Task<IActionResult> Create([Bind("OrderId,FoodType,Amount,Price")] Order order)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(terrestrialAnimal);
+                _context.Add(order);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AnimalId"] = new SelectList(_context.Set<Animal>(), "AnimalId", "AnimalId", terrestrialAnimal.AnimalId);
-            return View(terrestrialAnimal);
+            return View(order);
         }
 
-        // GET: TerrestrialAnimals/Edit/5
+        // GET: Orders/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -77,23 +73,22 @@ namespace ASPAssignment.Controllers
                 return NotFound();
             }
 
-            var terrestrialAnimal = await _context.TerrestrialAnimal.FindAsync(id);
-            if (terrestrialAnimal == null)
+            var order = await _context.Order.FindAsync(id);
+            if (order == null)
             {
                 return NotFound();
             }
-            ViewData["AnimalId"] = new SelectList(_context.Set<Animal>(), "AnimalId", "AnimalId", terrestrialAnimal.AnimalId);
-            return View(terrestrialAnimal);
+            return View(order);
         }
 
-        // POST: TerrestrialAnimals/Edit/5
+        // POST: Orders/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("TerrestrialId,AnimalId,Category,Weight,LifeSpan")] TerrestrialAnimal terrestrialAnimal)
+        public async Task<IActionResult> Edit(int id, [Bind("OrderId,FoodType,Amount,Price")] Order order)
         {
-            if (id != terrestrialAnimal.TerrestrialId)
+            if (id != order.OrderId)
             {
                 return NotFound();
             }
@@ -102,12 +97,12 @@ namespace ASPAssignment.Controllers
             {
                 try
                 {
-                    _context.Update(terrestrialAnimal);
+                    _context.Update(order);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!TerrestrialAnimalExists(terrestrialAnimal.TerrestrialId))
+                    if (!OrderExists(order.OrderId))
                     {
                         return NotFound();
                     }
@@ -118,11 +113,10 @@ namespace ASPAssignment.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AnimalId"] = new SelectList(_context.Set<Animal>(), "AnimalId", "AnimalId", terrestrialAnimal.AnimalId);
-            return View(terrestrialAnimal);
+            return View(order);
         }
 
-        // GET: TerrestrialAnimals/Delete/5
+        // GET: Orders/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -130,31 +124,30 @@ namespace ASPAssignment.Controllers
                 return NotFound();
             }
 
-            var terrestrialAnimal = await _context.TerrestrialAnimal
-                .Include(t => t.Animal)
-                .FirstOrDefaultAsync(m => m.TerrestrialId == id);
-            if (terrestrialAnimal == null)
+            var order = await _context.Order
+                .FirstOrDefaultAsync(m => m.OrderId == id);
+            if (order == null)
             {
                 return NotFound();
             }
 
-            return View(terrestrialAnimal);
+            return View(order);
         }
 
-        // POST: TerrestrialAnimals/Delete/5
+        // POST: Orders/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var terrestrialAnimal = await _context.TerrestrialAnimal.FindAsync(id);
-            _context.TerrestrialAnimal.Remove(terrestrialAnimal);
+            var order = await _context.Order.FindAsync(id);
+            _context.Order.Remove(order);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool TerrestrialAnimalExists(int id)
+        private bool OrderExists(int id)
         {
-            return _context.TerrestrialAnimal.Any(e => e.TerrestrialId == id);
+            return _context.Order.Any(e => e.OrderId == id);
         }
     }
 }

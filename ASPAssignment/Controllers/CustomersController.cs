@@ -10,22 +10,22 @@ using ASPAssignment.Models;
 
 namespace ASPAssignment.Controllers
 {
-    public class AnimalsController : Controller
+    public class CustomersController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public AnimalsController(ApplicationDbContext context)
+        public CustomersController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Animals
+        // GET: Customers
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Animal.ToListAsync());
+            return View(await _context.Customer.ToListAsync());
         }
 
-        // GET: Animals/Details/5
+        // GET: Customers/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,39 +33,39 @@ namespace ASPAssignment.Controllers
                 return NotFound();
             }
 
-            var animal = await _context.Animal
-                .FirstOrDefaultAsync(m => m.AnimalId == id);
-            if (animal == null)
+            var customer = await _context.Customer
+                .FirstOrDefaultAsync(m => m.CustomerId == id);
+            if (customer == null)
             {
                 return NotFound();
             }
 
-            return View(animal);
+            return View(customer);
         }
 
-        // GET: Animals/Create
+        // GET: Customers/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Animals/Create
+        // POST: Customers/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("AnimalId,Type,Source,Feture")] Animal animal)
+        public async Task<IActionResult> Create([Bind("CustomerId,FirstName,LastName,Address,OrderId")] Customer customer)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(animal);
+                _context.Add(customer);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(animal);
+            return View(customer);
         }
 
-        // GET: Animals/Edit/5
+        // GET: Customers/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,22 +73,22 @@ namespace ASPAssignment.Controllers
                 return NotFound();
             }
 
-            var animal = await _context.Animal.FindAsync(id);
-            if (animal == null)
+            var customer = await _context.Customer.FindAsync(id);
+            if (customer == null)
             {
                 return NotFound();
             }
-            return View(animal);
+            return View(customer);
         }
 
-        // POST: Animals/Edit/5
+        // POST: Customers/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("AnimalId,Type,Source,Feture")] Animal animal)
+        public async Task<IActionResult> Edit(int id, [Bind("CustomerId,FirstName,LastName,Address,OrderId")] Customer customer)
         {
-            if (id != animal.AnimalId)
+            if (id != customer.CustomerId)
             {
                 return NotFound();
             }
@@ -97,12 +97,12 @@ namespace ASPAssignment.Controllers
             {
                 try
                 {
-                    _context.Update(animal);
+                    _context.Update(customer);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!AnimalExists(animal.AnimalId))
+                    if (!CustomerExists(customer.CustomerId))
                     {
                         return NotFound();
                     }
@@ -113,10 +113,10 @@ namespace ASPAssignment.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(animal);
+            return View(customer);
         }
 
-        // GET: Animals/Delete/5
+        // GET: Customers/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,30 +124,30 @@ namespace ASPAssignment.Controllers
                 return NotFound();
             }
 
-            var animal = await _context.Animal
-                .FirstOrDefaultAsync(m => m.AnimalId == id);
-            if (animal == null)
+            var customer = await _context.Customer
+                .FirstOrDefaultAsync(m => m.CustomerId == id);
+            if (customer == null)
             {
                 return NotFound();
             }
 
-            return View(animal);
+            return View(customer);
         }
 
-        // POST: Animals/Delete/5
+        // POST: Customers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var animal = await _context.Animal.FindAsync(id);
-            _context.Animal.Remove(animal);
+            var customer = await _context.Customer.FindAsync(id);
+            _context.Customer.Remove(customer);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool AnimalExists(int id)
+        private bool CustomerExists(int id)
         {
-            return _context.Animal.Any(e => e.AnimalId == id);
+            return _context.Customer.Any(e => e.CustomerId == id);
         }
     }
 }

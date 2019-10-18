@@ -13,7 +13,8 @@ namespace ASPAssignment.Data
             : base(options)
         {
         }
-        public DbSet<ASPAssignment.Models.TerrestrialAnimal> TerrestrialAnimal { get; set; }
-        public DbSet<ASPAssignment.Models.Animal> Animal { get; set; }
+        public DbSet<ASPAssignment.Models.Customer> Customer { get; set; }
+        public DbSet<ASPAssignment.Models.Order> Order { get; set; }
+        
     }
 }
