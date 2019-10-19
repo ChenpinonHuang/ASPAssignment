@@ -21,8 +21,7 @@ namespace ASPAssignment.Controllers
         // GET: Orders
         public async Task<IActionResult> Index()
         {
-            var aSPAssignmentContext = _context.Order.Include(o => o.Customers);
-            return View(await aSPAssignmentContext.ToListAsync());
+            return View(await _context.Order.ToListAsync());
         }
 
         // GET: Orders/Details/5
@@ -34,7 +33,6 @@ namespace ASPAssignment.Controllers
             }
 
             var order = await _context.Order
-                .Include(o => o.Customers)
                 .FirstOrDefaultAsync(m => m.OrderId == id);
             if (order == null)
             {
@@ -47,7 +45,6 @@ namespace ASPAssignment.Controllers
         // GET: Orders/Create
         public IActionResult Create()
         {
-            ViewData["CustomerId"] = new SelectList(_context.Customer, "CustomerId", "CustomerId");
             return View();
         }
 
@@ -56,7 +53,7 @@ namespace ASPAssignment.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("OrderId,CustomerId,FoodType,Amount,Price")] Order order)
+        public async Task<IActionResult> Create([Bind("OrderId,Name,FoodType,Amount,Price")] Order order)
         {
             if (ModelState.IsValid)
             {
@@ -64,7 +61,6 @@ namespace ASPAssignment.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CustomerId"] = new SelectList(_context.Customer, "CustomerId", "CustomerId", order.CustomerId);
             return View(order);
         }
 
@@ -81,7 +77,6 @@ namespace ASPAssignment.Controllers
             {
                 return NotFound();
             }
-            ViewData["CustomerId"] = new SelectList(_context.Customer, "CustomerId", "CustomerId", order.CustomerId);
             return View(order);
         }
 
@@ -90,7 +85,7 @@ namespace ASPAssignment.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("OrderId,CustomerId,FoodType,Amount,Price")] Order order)
+        public async Task<IActionResult> Edit(int id, [Bind("OrderId,Name,FoodType,Amount,Price")] Order order)
         {
             if (id != order.OrderId)
             {
@@ -117,7 +112,6 @@ namespace ASPAssignment.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CustomerId"] = new SelectList(_context.Customer, "CustomerId", "CustomerId", order.CustomerId);
             return View(order);
         }
 
@@ -130,7 +124,6 @@ namespace ASPAssignment.Controllers
             }
 
             var order = await _context.Order
-                .Include(o => o.Customers)
                 .FirstOrDefaultAsync(m => m.OrderId == id);
             if (order == null)
             {

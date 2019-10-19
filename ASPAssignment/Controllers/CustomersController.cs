@@ -53,7 +53,7 @@ namespace ASPAssignment.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CustomerId,FirstName,LastName,Address")] Customer customer)
+        public async Task<IActionResult> Create([Bind("CustomerId,Name,Account,Address")] Customer customer)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace ASPAssignment.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CustomerId,FirstName,LastName,Address")] Customer customer)
+        public async Task<IActionResult> Edit(int id, [Bind("CustomerId,Name,Account,Address")] Customer customer)
         {
             if (id != customer.CustomerId)
             {
