@@ -47,7 +47,7 @@ namespace ASPAssignment.Controllers
         // GET: Orders/Create
         public IActionResult Create()
         {
-            ViewData["CustomerId"] = new SelectList(_context.Customer, "CustomerId", "CustomerId");
+            ViewData["Customers"] = new SelectList(_context.Customer);
             return View();
         }
 
