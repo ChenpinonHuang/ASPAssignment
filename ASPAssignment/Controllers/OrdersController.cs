@@ -21,6 +21,11 @@ namespace ASPAssignment.Controllers
         // GET: Orders
         public async Task<IActionResult> Index()
         {
+            //check if the user have log in before let them see the infomation
+            if (!User.Identity.IsAuthenticated)
+            {
+                return Redirect("/Identity/Account/Login");
+            }
             var aSPAssignmentContext = _context.Order.Include(o => o.Customers);
             return View(await aSPAssignmentContext.ToListAsync());
         }
@@ -28,6 +33,10 @@ namespace ASPAssignment.Controllers
         // GET: Orders/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            if (!User.Identity.IsAuthenticated)
+            {
+                return Redirect("/Identity/Account/Login");
+            }
             if (id == null)
             {
                 return NotFound();
@@ -47,6 +56,10 @@ namespace ASPAssignment.Controllers
         // GET: Orders/Create
         public IActionResult Create()
         {
+            if (!User.Identity.IsAuthenticated)
+            {
+                return Redirect("/Identity/Account/Login");
+            }
             ViewData["Customers"] = new SelectList(_context.Customer);
             return View();
         }
@@ -71,6 +84,10 @@ namespace ASPAssignment.Controllers
         // GET: Orders/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            if (!User.Identity.IsAuthenticated)
+            {
+                return Redirect("/Identity/Account/Login");
+            }
             if (id == null)
             {
                 return NotFound();
@@ -92,6 +109,10 @@ namespace ASPAssignment.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("OrderId,CustomerId,FoodType,Amount,Price")] Order order)
         {
+            if (!User.Identity.IsAuthenticated)
+            {
+                return Redirect("/Identity/Account/Login");
+            }
             if (id != order.OrderId)
             {
                 return NotFound();
@@ -124,6 +145,10 @@ namespace ASPAssignment.Controllers
         // GET: Orders/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+            if (!User.Identity.IsAuthenticated)
+            {
+                return Redirect("/Identity/Account/Login");
+            }
             if (id == null)
             {
                 return NotFound();
