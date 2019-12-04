@@ -100,11 +100,11 @@ namespace ASPAssignment.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Account");
+
                     b.Property<string>("Address");
 
-                    b.Property<string>("FirstName");
-
-                    b.Property<string>("LastName");
+                    b.Property<string>("Name");
 
                     b.HasKey("CustomerId");
 
@@ -119,15 +119,17 @@ namespace ASPAssignment.Migrations
 
                     b.Property<int>("Amount");
 
-                    b.Property<int>("CustomerId");
+                    b.Property<int?>("CustomersCustomerId");
 
                     b.Property<string>("FoodType");
+
+                    b.Property<int>("Name");
 
                     b.Property<double>("Price");
 
                     b.HasKey("OrderId");
 
-                    b.HasIndex("CustomerId");
+                    b.HasIndex("CustomersCustomerId");
 
                     b.ToTable("Order");
                 });
@@ -222,8 +224,7 @@ namespace ASPAssignment.Migrations
                 {
                     b.HasOne("ASPAssignment.Models.Customer", "Customers")
                         .WithMany("Orders")
-                        .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("CustomersCustomerId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
