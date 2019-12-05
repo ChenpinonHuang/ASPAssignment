@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ASPAssignment.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ASPAssignment.Controllers
 {
+    [Authorize (Roles = "role1, role2")]
     public class CustomersController : Controller
     {
         private readonly ASPAssignmentContext _context;
