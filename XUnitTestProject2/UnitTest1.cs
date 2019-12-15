@@ -1,6 +1,5 @@
-using System;
-using Xunit;
 using ASPAssignment.Controllers;
+using Xunit;
 
 namespace XUnitTestProject2
 {
@@ -10,8 +9,42 @@ namespace XUnitTestProject2
         public void Test1()
         {
             var home = new HomeController();
-            var output = home.Index();
-            Assert.NotNull(output);
+            var result = home.Index();
+            Assert.NotNull(result);
+        }
+
+        [Fact]
+        public void Test2()
+        {
+            var home = new HomeController();
+            var result = home.About();
+            Assert.NotNull(result);
+        }
+
+        [Fact]
+        public void Test3()
+        {
+            var home = new HomeController();
+            var result = home.Contact();
+            Assert.NotNull(result);
+        }
+
+        [Fact]
+        public void Test4()
+        {
+            var home = new HomeController();
+            var result = home.Privacy();
+            Assert.NotNull(result);
+        }
+
+        [Fact]
+        public void Test5()
+        {
+            var home = new HomeController();
+            var result = home.Error();
+            Assert.NotNull(result);
         }
     }
+
+
 }

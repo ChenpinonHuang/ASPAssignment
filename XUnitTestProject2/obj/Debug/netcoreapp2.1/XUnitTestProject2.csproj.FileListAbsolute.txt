@@ -1,0 +1,38 @@
+e:\Users\acer\Downloads\ASPAssignment\ASPAssignment1\ASPAssignment\XUnitTestProject2\bin\Debug\netcoreapp2.1\ASPAssignment.Views.dll
+e:\Users\acer\Downloads\ASPAssignment\ASPAssignment1\ASPAssignment\XUnitTestProject2\bin\Debug\netcoreapp2.1\ASPAssignment.Views.pdb
+e:\Users\acer\Downloads\ASPAssignment\ASPAssignment1\ASPAssignment\XUnitTestProject2\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+e:\Users\acer\Downloads\ASPAssignment\ASPAssignment1\ASPAssignment\XUnitTestProject2\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+e:\Users\acer\Downloads\ASPAssignment\ASPAssignment1\ASPAssignment\XUnitTestProject2\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+e:\Users\acer\Downloads\ASPAssignment\ASPAssignment1\ASPAssignment\XUnitTestProject2\bin\Debug\netcoreapp2.1\XUnitTestProject2.deps.json
+e:\Users\acer\Downloads\ASPAssignment\ASPAssignment1\ASPAssignment\XUnitTestProject2\bin\Debug\netcoreapp2.1\XUnitTestProject2.runtimeconfig.json
+e:\Users\acer\Downloads\ASPAssignment\ASPAssignment1\ASPAssignment\XUnitTestProject2\bin\Debug\netcoreapp2.1\XUnitTestProject2.runtimeconfig.dev.json
+e:\Users\acer\Downloads\ASPAssignment\ASPAssignment1\ASPAssignment\XUnitTestProject2\bin\Debug\netcoreapp2.1\XUnitTestProject2.dll
+e:\Users\acer\Downloads\ASPAssignment\ASPAssignment1\ASPAssignment\XUnitTestProject2\bin\Debug\netcoreapp2.1\ASPAssignment.dll
+e:\Users\acer\Downloads\ASPAssignment\ASPAssignment1\ASPAssignment\XUnitTestProject2\bin\Debug\netcoreapp2.1\ASPAssignment.pdb
+e:\Users\acer\Downloads\ASPAssignment\ASPAssignment1\ASPAssignment\XUnitTestProject2\obj\Debug\netcoreapp2.1\XUnitTestProject2.csprojAssemblyReference.cache
+e:\Users\acer\Downloads\ASPAssignment\ASPAssignment1\ASPAssignment\XUnitTestProject2\obj\Debug\netcoreapp2.1\XUnitTestProject2.csproj.CoreCompileInputs.cache
+e:\Users\acer\Downloads\ASPAssignment\ASPAssignment1\ASPAssignment\XUnitTestProject2\obj\Debug\netcoreapp2.1\XUnitTestProject2.AssemblyInfoInputs.cache
+e:\Users\acer\Downloads\ASPAssignment\ASPAssignment1\ASPAssignment\XUnitTestProject2\obj\Debug\netcoreapp2.1\XUnitTestProject2.AssemblyInfo.cs
+e:\Users\acer\Downloads\ASPAssignment\ASPAssignment1\ASPAssignment\XUnitTestProject2\obj\Debug\netcoreapp2.1\XUnitTestProject2.csproj.CopyComplete
+e:\Users\acer\Downloads\ASPAssignment\ASPAssignment1\ASPAssignment\XUnitTestProject2\bin\Debug\netcoreapp2.1\XUnitTestProject2.pdb
+e:\Users\acer\Downloads\ASPAssignment\ASPAssignment1\ASPAssignment\XUnitTestProject2\obj\Debug\netcoreapp2.1\XUnitTestProject2.dll
+e:\Users\acer\Downloads\ASPAssignment\ASPAssignment1\ASPAssignment\XUnitTestProject2\obj\Debug\netcoreapp2.1\XUnitTestProject2.pdb
+E:\Gerogian college\Semester 3\Server-Side Scripting-ASP.NET\ASPAssignmentStep2\ASPAssignmentStep2\ASPAssignment\XUnitTestProject2\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+E:\Gerogian college\Semester 3\Server-Side Scripting-ASP.NET\ASPAssignmentStep2\ASPAssignmentStep2\ASPAssignment\XUnitTestProject2\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+E:\Gerogian college\Semester 3\Server-Side Scripting-ASP.NET\ASPAssignmentStep2\ASPAssignmentStep2\ASPAssignment\XUnitTestProject2\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+E:\Gerogian college\Semester 3\Server-Side Scripting-ASP.NET\ASPAssignmentStep2\ASPAssignmentStep2\ASPAssignment\XUnitTestProject2\bin\Debug\netcoreapp2.1\ASPAssignment.Views.dll
+E:\Gerogian college\Semester 3\Server-Side Scripting-ASP.NET\ASPAssignmentStep2\ASPAssignmentStep2\ASPAssignment\XUnitTestProject2\bin\Debug\netcoreapp2.1\ASPAssignment.Views.pdb
+E:\Gerogian college\Semester 3\Server-Side Scripting-ASP.NET\ASPAssignmentStep2\ASPAssignmentStep2\ASPAssignment\XUnitTestProject2\bin\Debug\netcoreapp2.1\XUnitTestProject2.deps.json
+E:\Gerogian college\Semester 3\Server-Side Scripting-ASP.NET\ASPAssignmentStep2\ASPAssignmentStep2\ASPAssignment\XUnitTestProject2\bin\Debug\netcoreapp2.1\XUnitTestProject2.runtimeconfig.json
+E:\Gerogian college\Semester 3\Server-Side Scripting-ASP.NET\ASPAssignmentStep2\ASPAssignmentStep2\ASPAssignment\XUnitTestProject2\bin\Debug\netcoreapp2.1\XUnitTestProject2.runtimeconfig.dev.json
+E:\Gerogian college\Semester 3\Server-Side Scripting-ASP.NET\ASPAssignmentStep2\ASPAssignmentStep2\ASPAssignment\XUnitTestProject2\bin\Debug\netcoreapp2.1\XUnitTestProject2.dll
+E:\Gerogian college\Semester 3\Server-Side Scripting-ASP.NET\ASPAssignmentStep2\ASPAssignmentStep2\ASPAssignment\XUnitTestProject2\bin\Debug\netcoreapp2.1\XUnitTestProject2.pdb
+E:\Gerogian college\Semester 3\Server-Side Scripting-ASP.NET\ASPAssignmentStep2\ASPAssignmentStep2\ASPAssignment\XUnitTestProject2\bin\Debug\netcoreapp2.1\ASPAssignment.dll
+E:\Gerogian college\Semester 3\Server-Side Scripting-ASP.NET\ASPAssignmentStep2\ASPAssignmentStep2\ASPAssignment\XUnitTestProject2\bin\Debug\netcoreapp2.1\ASPAssignment.pdb
+E:\Gerogian college\Semester 3\Server-Side Scripting-ASP.NET\ASPAssignmentStep2\ASPAssignmentStep2\ASPAssignment\XUnitTestProject2\obj\Debug\netcoreapp2.1\XUnitTestProject2.csprojAssemblyReference.cache
+E:\Gerogian college\Semester 3\Server-Side Scripting-ASP.NET\ASPAssignmentStep2\ASPAssignmentStep2\ASPAssignment\XUnitTestProject2\obj\Debug\netcoreapp2.1\XUnitTestProject2.csproj.CoreCompileInputs.cache
+E:\Gerogian college\Semester 3\Server-Side Scripting-ASP.NET\ASPAssignmentStep2\ASPAssignmentStep2\ASPAssignment\XUnitTestProject2\obj\Debug\netcoreapp2.1\XUnitTestProject2.AssemblyInfoInputs.cache
+E:\Gerogian college\Semester 3\Server-Side Scripting-ASP.NET\ASPAssignmentStep2\ASPAssignmentStep2\ASPAssignment\XUnitTestProject2\obj\Debug\netcoreapp2.1\XUnitTestProject2.AssemblyInfo.cs
+E:\Gerogian college\Semester 3\Server-Side Scripting-ASP.NET\ASPAssignmentStep2\ASPAssignmentStep2\ASPAssignment\XUnitTestProject2\obj\Debug\netcoreapp2.1\XUnitTestProject2.csproj.CopyComplete
+E:\Gerogian college\Semester 3\Server-Side Scripting-ASP.NET\ASPAssignmentStep2\ASPAssignmentStep2\ASPAssignment\XUnitTestProject2\obj\Debug\netcoreapp2.1\XUnitTestProject2.dll
+E:\Gerogian college\Semester 3\Server-Side Scripting-ASP.NET\ASPAssignmentStep2\ASPAssignmentStep2\ASPAssignment\XUnitTestProject2\obj\Debug\netcoreapp2.1\XUnitTestProject2.pdb
