@@ -21,6 +21,11 @@ namespace ASPAssignment.Controllers
         // GET: Orders
         public async Task<IActionResult> Index()
         {
+            //check if the user have log in before let them see the infomation
+            if (!User.Identity.IsAuthenticated)
+            {
+                return Redirect("/Identity/Account/Login");
+            }
             var aSPAssignmentContext = _context.Order.Include(o => o.Customers);
             return View(await aSPAssignmentContext.ToListAsync());
         }
@@ -28,6 +33,11 @@ namespace ASPAssignment.Controllers
         // GET: Orders/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            //check if the user have log in before let them see the infomation
+            if (!User.Identity.IsAuthenticated)
+            {
+                return Redirect("/Identity/Account/Login");
+            }
             if (id == null)
             {
                 return NotFound();
@@ -47,6 +57,11 @@ namespace ASPAssignment.Controllers
         // GET: Orders/Create
         public IActionResult Create()
         {
+            //check if the user have log in before let them see the infomation
+            if (!User.Identity.IsAuthenticated)
+            {
+                return Redirect("/Identity/Account/Login");
+            }
             ViewData["CustomerId"] = new SelectList(_context.Customer, "CustomerId", "CustomerId");
             return View();
         }
@@ -58,6 +73,11 @@ namespace ASPAssignment.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("OrderId,CustomerId,FoodType,Amount,Price")] Order order)
         {
+            //check if the user have log in before let them see the infomation
+            if (!User.Identity.IsAuthenticated)
+            {
+                return Redirect("/Identity/Account/Login");
+            }
             if (ModelState.IsValid)
             {
                 _context.Add(order);
@@ -71,6 +91,11 @@ namespace ASPAssignment.Controllers
         // GET: Orders/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            //check if the user have log in before let them see the infomation
+            if (!User.Identity.IsAuthenticated)
+            {
+                return Redirect("/Identity/Account/Login");
+            }
             if (id == null)
             {
                 return NotFound();
@@ -92,6 +117,11 @@ namespace ASPAssignment.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("OrderId,CustomerId,FoodType,Amount,Price")] Order order)
         {
+            //check if the user have log in before let them see the infomation
+            if (!User.Identity.IsAuthenticated)
+            {
+                return Redirect("/Identity/Account/Login");
+            }
             if (id != order.OrderId)
             {
                 return NotFound();
@@ -124,6 +154,11 @@ namespace ASPAssignment.Controllers
         // GET: Orders/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+            //check if the user have log in before let them see the infomation
+            if (!User.Identity.IsAuthenticated)
+            {
+                return Redirect("/Identity/Account/Login");
+            }
             if (id == null)
             {
                 return NotFound();
@@ -145,6 +180,11 @@ namespace ASPAssignment.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            //check if the user have log in before let them see the infomation
+            if (!User.Identity.IsAuthenticated)
+            {
+                return Redirect("/Identity/Account/Login");
+            }
             var order = await _context.Order.FindAsync(id);
             _context.Order.Remove(order);
             await _context.SaveChangesAsync();

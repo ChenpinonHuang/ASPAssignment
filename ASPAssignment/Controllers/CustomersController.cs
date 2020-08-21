@@ -10,7 +10,8 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace ASPAssignment.Controllers
 {
-    [Authorize (Roles = "role1, role2")]
+    //Another way to stop the user see the specify page without login
+    //[Authorize (Roles = "role1, role2")]
     public class CustomersController : Controller
     {
         private readonly ASPAssignmentContext _context;
@@ -23,12 +24,20 @@ namespace ASPAssignment.Controllers
         // GET: Customers
         public async Task<IActionResult> Index()
         {
+            if (!User.Identity.IsAuthenticated)
+            {
+                return Redirect("/Identity/Account/Login");
+            }
             return View(await _context.Customer.ToListAsync());
         }
 
         // GET: Customers/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            if (!User.Identity.IsAuthenticated)
+            {
+                return Redirect("/Identity/Account/Login");
+            }
             if (id == null)
             {
                 return NotFound();
@@ -47,6 +56,10 @@ namespace ASPAssignment.Controllers
         // GET: Customers/Create
         public IActionResult Create()
         {
+            if (!User.Identity.IsAuthenticated)
+            {
+                return Redirect("/Identity/Account/Login");
+            }
             return View();
         }
 
@@ -69,6 +82,10 @@ namespace ASPAssignment.Controllers
         // GET: Customers/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            if (!User.Identity.IsAuthenticated)
+            {
+                return Redirect("/Identity/Account/Login");
+            }
             if (id == null)
             {
                 return NotFound();
@@ -89,6 +106,10 @@ namespace ASPAssignment.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("CustomerId,FirstName,LastName,Address")] Customer customer)
         {
+            if (!User.Identity.IsAuthenticated)
+            {
+                return Redirect("/Identity/Account/Login");
+            }
             if (id != customer.CustomerId)
             {
                 return NotFound();
@@ -120,6 +141,10 @@ namespace ASPAssignment.Controllers
         // GET: Customers/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+            if (!User.Identity.IsAuthenticated)
+            {
+                return Redirect("/Identity/Account/Login");
+            }
             if (id == null)
             {
                 return NotFound();
